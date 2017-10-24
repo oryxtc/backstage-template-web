@@ -8,16 +8,18 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 
+import MenuBar from '@/components/MenuBar'
+
 Vue.use(ElementUI)
 Vue.use(VueResource)
 
 Vue.config.productionTip = false
 
+Vue.component('MenuBar', MenuBar)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App },
   render: h => h(App)
 })

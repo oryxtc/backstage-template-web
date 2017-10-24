@@ -1,22 +1,16 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <MenuBar :api-url="this.apiUrl"></MenuBar>
+        <router-view :api-url="this.apiUrl"/>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    data () {
+      return {
+        apiUrl: 'http://www.backstage.com/'
+      }
+    }
+  }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
