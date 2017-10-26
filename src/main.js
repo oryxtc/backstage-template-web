@@ -14,6 +14,7 @@ Vue.use(ElementUI)
 Vue.use(VueResource)
 
 Vue.config.productionTip = false
+Vue.prototype.apiUrl = 'http://www.backstage.com/'
 
 Vue.component('MenuBar', MenuBar)
 
