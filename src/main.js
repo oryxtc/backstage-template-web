@@ -8,15 +8,15 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 
-import MenuBar from '@/components/MenuBar'
+import Sidebar from '@/components/Sidebar'
 
 Vue.use(ElementUI)
 Vue.use(VueResource)
 
 Vue.config.productionTip = false
-Vue.prototype.apiUrl = 'http://www.backstage.com/'
+Vue.prototype.apiUrl = 'http://www.backstage.com/api/'
 
-Vue.component('MenuBar', MenuBar)
+Vue.component('Sidebar', Sidebar)
 
 /* eslint-disable no-new */
 new Vue({

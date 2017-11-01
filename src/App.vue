@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <MenuBar :api-url="this.apiUrl"></MenuBar>
+        <Sidebar :api-url="this.apiUrl"></Sidebar>
         <router-view :api-url="this.apiUrl"/>
     </div>
 </template>

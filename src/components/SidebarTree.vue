@@ -6,7 +6,7 @@
                     <i class="el-icon-message"></i>
                     <span slot="title">{{value.menu_name}}</span>
                 </template>
-                <MenuTree :menuData="value.node"></MenuTree>
+                <SidebarTree :menuData="value.node"></SidebarTree>
             </el-submenu>
             <el-menu-item index="value.id" v-else>
                 <i class="el-icon-message"></i>
@@ -19,7 +19,7 @@
 <script>
   export default {
     props: ['menuData'],
-    name: 'MenuTree'
+    name: 'SidebarTree'
   }
 </script>
 
