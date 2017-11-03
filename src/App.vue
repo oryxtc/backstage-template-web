@@ -3,13 +3,13 @@
         <!--左侧菜单栏-->
         <el-aside width="auto" style="background-color: rgb(238, 241, 246)">
             <!--菜单栏组件-->
-            <NavMenu :apiUrl="this.apiUrl" :isCollapse="this.isCollapse" ></NavMenu>
+            <NavMenu :apiUrl="this.apiUrl"></NavMenu>
         </el-aside>
         <!--右侧容器-->
         <el-container>
             <!--头部-->
             <el-header style="text-align: right; font-size: 12px">
-                <Tabs :isCollapse="this.isCollapse"></Tabs>
+                <Tabs></Tabs>
             </el-header>
             <!--主体内容-->
             <el-main>
@@ -24,7 +24,6 @@
   export default {
     data () {
       return {
-        isCollapse: true
       }
     },
     methods: {

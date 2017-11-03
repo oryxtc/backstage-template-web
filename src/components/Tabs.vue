@@ -2,7 +2,7 @@
     <div>
         <el-row :gutter="20">
             <el-col :span="1">
-                <i class="el-icon-d-arrow-left" @click="toggleMenu"></i>
+                <i :class="[isCollapse?'el-icon-d-arrow-right':'el-icon-d-arrow-left']" @click="toggleMenu"></i>
             </el-col>
             <el-col :span="6" :offset="6">
                 <el-dropdown>
@@ -15,25 +15,30 @@
                 </el-dropdown>
             </el-col>
         </el-row>
-
-
-
         <span>王小虎</span>
     </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     data () {
       return {
       }
     },
-    props: ['isCollapse'],
+    props: [],
     created: function () {
+    },
+    computed: {
+      // 使用对象展开运算符将此对象混入到外部对象中
+      ...mapState([
+        'isCollapse'
+      ])
     },
     methods: {
       toggleMenu: function () {
-        this.isCollapse = !this.isCollapse
+        this.$store.commit('toggleMenu')
       }
     }
   }

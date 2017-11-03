@@ -6,9 +6,9 @@
                     <i class="el-icon-message"></i>
                     <span slot="title">{{value.menu_name}}</span>
                 </template>
-                <el-menu-item :index="value.menu_name" v-for="value in value.node">
+                <el-menu-item :index="value.menu_name" v-for="nodeVal in value.node" :key="value.id">
                     <i class="el-icon-message"></i>
-                    <span slot="title">{{value.menu_name}}</span>
+                    <span slot="title">{{nodeVal.menu_name}}</span>
                 </el-menu-item>
             </el-submenu>
             <el-menu-item :index="value.menu_name" v-else>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     data () {
       return {
@@ -27,13 +29,19 @@
         documentHeight: document.documentElement.clientHeight + 'px'
       }
     },
-    props: ['apiUrl', 'isCollapse'],
+    props: ['apiUrl'],
     created: function () {
       this.getMenu()
     },
+    computed: {
+      // 使用对象展开运算符将此对象混入到外部对象中
+      ...mapState([
+        'isCollapse'
+      ])
+    },
     methods: {
       getMenu: function () {
-        this.$http.get(this.apiUrl + 'menu').then(function (response) {
+        this.$http.get(this.$store.state.apiUrl + 'menu').then(function (response) {
           this.menuData = response.data
         }, function (error) {
           console.log(error)
