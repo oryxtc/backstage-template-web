@@ -8,7 +8,8 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 
-import Sidebar from '@/components/Sidebar'
+import NavMenu from '@/components/NavMenu'
+import Tabs from '@/components/Tabs'
 
 Vue.use(ElementUI)
 Vue.use(VueResource)
@@ -16,7 +17,8 @@ Vue.use(VueResource)
 Vue.config.productionTip = false
 Vue.prototype.apiUrl = 'http://www.backstage.com/api/'
 
-Vue.component('Sidebar', Sidebar)
+Vue.component('NavMenu', NavMenu)
+Vue.component('Tabs', Tabs)
 
 /* eslint-disable no-new */
 new Vue({
